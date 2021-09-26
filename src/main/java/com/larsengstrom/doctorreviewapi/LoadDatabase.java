@@ -17,8 +17,16 @@ public class LoadDatabase {
 	  CommandLineRunner initDatabase(DoctorRepository repository) {
 
 	    return args -> {
-	      log.info("Preloading " + repository.save(new Doctor("Doctor House", "neurology")));
-	      log.info("Preloading " + repository.save(new Doctor("Doctor Dre", "neurology")));
+	      log.info("Preloading " + repository.save(new Doctor("Dr. Jeffrey Cole", "Surgery", 3, 5)));
+	      log.info("Preloading " + repository.save(new Doctor("Dr. Amber Volakis", "Radiology", 5, 2)));
+	      log.info("Preloading " + repository.save(new Doctor("Dr. Travis Brennan", "Epidemiology", 4, 3)));
+	      log.info("Preloading " + repository.save(new Doctor("Dr. Lisa Cuddy", "Endocrinology", 5, 1)));
+	      log.info("Preloading " + repository.save(new Doctor("Dr. Christopher Turk", "Surgery", 3, 4)));
+	      log.info("Preloading " + repository.save(new Doctor("Dr. Erica Hahn", "Immunology", 5, 5)));
+	      log.info("Preloading " + repository.save(new Doctor("Dr. James Wilson", "Oncology", 4, 2)));
+	      log.info("Preloading " + repository.save(new Doctor("Dr. Stephanie Edwards", "Surgery", 2, 5)));
+	      log.info("Preloading " + repository.save(new Doctor("Dr. Eric Foreman", "Neurology", 5, 4)));
+	      log.info("Preloading " + repository.save(new Doctor("Dr. Allison Cameron", "Immunology", 5, 5)));
 	    };
 }
 }

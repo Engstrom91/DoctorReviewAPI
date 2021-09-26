@@ -11,15 +11,23 @@ public class Doctor {
 	  private @Id @GeneratedValue Long id;
 	  private String name;
 	  private String speciality;
+	  private int treatmentScore;
+	  private int personalityScore;
 	
 	public Doctor(){}
 	public Doctor(String name, String speciality){
 		this.name = name;
+		this.speciality = speciality;		
+	}
+	public Doctor(String name, String speciality, int treatmentScore, int personalityScore){
+		this.name = name;
 		this.speciality = speciality;
+		this.treatmentScore = treatmentScore;
+		this.personalityScore = personalityScore;
 		
 	
 	}
-	
+		
 	  	  public Long getId() {
 		    return this.id;
 		  }
@@ -32,19 +40,27 @@ public class Doctor {
 		    return this.speciality;
 		  }
 		  
+		  public Integer getTreatmentScore() {
+			    return this.treatmentScore;
+			  }
+		  
+		  public Integer getPersonalityScore() {
+			    return this.personalityScore;
+			  }
+		  
 		  public void setId(Long id) {
 			    this.id = id;
 			  }
 
-			  public void setName(String name) {
+		  public void setName(String name) {
 			    this.name = name;
 			  }
 
-			  public void setSpeciality(String speciality) {
+		  public void setSpeciality(String speciality) {
 			    this.speciality = speciality;
 			  }
 			  
-			  @Override
+		  @Override
 			  public boolean equals(Object o) {
 
 			    if (this == o)
@@ -57,10 +73,10 @@ public class Doctor {
 			  }
 			  @Override
 			  public int hashCode() {
-			    return Objects.hash(this.id, this.name, this.speciality);
+			    return Objects.hash(this.id, this.name, this.speciality, this.treatmentScore, this.personalityScore);
 			  }
 			  @Override
 			  public String toString() {
-			    return "Doctor{" + "id=" + this.id + ", name='" + this.name + '\'' + ", speciality='" + this.speciality + '\'' + '}';
+			    return "Doctor{" + "id=" + this.id + ", name='" + this.name + '\'' + ", speciality='" + this.speciality + '\'' + ", treatmentScore='" + this.treatmentScore + '\'' + ", personalityScore='" + this.personalityScore + '\'' + '}';
 			  }
 }
