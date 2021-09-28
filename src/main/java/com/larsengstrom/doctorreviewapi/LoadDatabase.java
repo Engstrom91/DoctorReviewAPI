@@ -9,11 +9,11 @@ import org.springframework.context.annotation.Configuration;
 import com.larsengstrom.doctorreviewapi.model.Doctor;
 import com.larsengstrom.doctorreviewapi.repository.DoctorRepository;
 
-@Configuration
+@Configuration //This class is responsible for preloading our database. 
 public class LoadDatabase {
 	private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
 	
-	@Bean
+	@Bean //All CommandLineRunner beans are run as soon as the application context is loaded.
 	  CommandLineRunner initDatabase(DoctorRepository repository) {
 
 	    return args -> {

@@ -23,24 +23,23 @@ public class DoctorController {
 		this.repository = repository;
 	}
 	
-	  // Aggregate root
-	  // tag::get-aggregate-root[]
+	//Below are the methods for each HTTP call. 
+
 	  @GetMapping("/doctors")
 	  List<Doctor> all() {
 	    return repository.findAll();
 	  }
-	  // end::get-aggregate-root[]
 	  
 	  @PostMapping("/doctors")
 	  Doctor newDoctor(@RequestBody Doctor newDoctor) {
 	    return repository.save(newDoctor);
 	  }
 	  
-	  // Single item
-	  
+	  //Gets a doctor by their id
 	  @GetMapping("/doctors/{id}")
 	  Doctor one(@PathVariable Long id) {
-	    
+		  
+		//An exception has been prepared in case a doctor can't be found.
 	    return repository.findById(id)
 	      .orElseThrow(() -> new DoctorNotFoundException(id));
 	  }

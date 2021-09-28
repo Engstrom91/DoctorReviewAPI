@@ -6,9 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
+//This class defines what constitutes a doctor in our system. 
+@Entity //The Entity annotation prepares this object to be stored in the JPA.
 public class Doctor {
-	  private @Id @GeneratedValue Long id;
+	  private @Id @GeneratedValue Long id; //This is our primary key.
 	  private String name;
 	  private String speciality;
 	  private int treatmentScore;
@@ -59,18 +60,7 @@ public class Doctor {
 		  public void setSpeciality(String speciality) {
 			    this.speciality = speciality;
 			  }
-			  
-		  @Override
-			  public boolean equals(Object o) {
 
-			    if (this == o)
-			      return true;
-			    if (!(o instanceof Doctor))
-			      return false;
-			    Doctor doctor = (Doctor) o;
-			    return Objects.equals(this.id, doctor.id) && Objects.equals(this.name, doctor.name)
-			        && Objects.equals(this.speciality, doctor.speciality);
-			  }
 			  @Override
 			  public int hashCode() {
 			    return Objects.hash(this.id, this.name, this.speciality, this.treatmentScore, this.personalityScore);
